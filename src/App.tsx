@@ -1,15 +1,25 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import WidgetLarge from "./components/WidgetLarge.tsx";
-import facebookIcon from "../public/images/icon-facebook.svg";
+import WidgetLarge from "./components/FollowerWidget.tsx";
+import { followerData, metricData } from "./sampleData.tsx";
 
 const App: React.FC = () => {
   return (
-    <>
-      <WidgetLarge icon={facebookIcon} />
-    </>
+    <div className="flex flex-row gap-6 content-center">
+      {followerData &&
+        followerData.map((metric) => {
+          return (
+            <WidgetLarge
+              key={metric.platform}
+              platform={metric.platform}
+              icon={metric.icon}
+              handle={metric.handle}
+              value={metric.value}
+              metric={metric.metric}
+              change={metric.change}
+            />
+          );
+        })}
+    </div>
   );
 };
 
