@@ -38,6 +38,14 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: white;
+}
+
+h3 {
+  font-size: 1.2em;
+  line-height: 1.1;
+  color: #8c98c6;
+  font-weight: bold;
 }
 
 button {

@@ -24,7 +24,7 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
   return (
     <div className="bg-[#252b42] rounded p-4 border-t-4 border-red-500 w-64 h-64 flex flex-col justify-center items-center gap-4">
       {/* Tag and platform */}
-      <div className="flex items-center mb-4">
+      <div className="flex items-center">
         <div className="mr-2">
           <img src={icon} alt="Icon" className="w-6 h-6" />
         </div>
@@ -33,8 +33,8 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
 
       {/* Number and metric */}
       <div className="flex flex-col items-center mb-4">
-        <div className="text-white text-3xl">{value}</div>
-        <div className="text-white">{metric}</div>
+        <div className="text-white text-[56px] font-bold">{value}</div>
+        <div className="text-white">{metric.toUpperCase()}</div>
       </div>
 
       {/* Increase/decrease */}
