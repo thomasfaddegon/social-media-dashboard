@@ -20,6 +20,9 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({
   const changeColor = change > 0 ? "text-green-500" : "text-red-500";
   const arrow = change > 0 ? arrowUp : arrowDown;
 
+  // remove negative sign
+  const changeAbsolute = Math.abs(change);
+
   return (
     <div className="bg-[#252b42] rounded p-8 w-64 h-40 flex flex-col justify-center items-center gap-10 font-bold">
       <div className="flex w-full justify-between">
@@ -29,9 +32,21 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({
         </div>
       </div>
 
-      <div className="flex w-full justify-between">
+      <div className="flex w-full justify-between items-center">
         <div className="text-3xl text-white">{value}</div>
-        <div className="c-left">{change}%</div>
+        <div className="flex flex-row ">
+          <div className=" flex items-center">
+            <img
+              src={arrow}
+              className="h-1 w-auto object-contain mr-1"
+              alt="arrow"
+            />
+          </div>
+
+          <div className={`align-middle ${changeColor}`}>
+            {changeAbsolute} %
+          </div>
+        </div>
       </div>
     </div>
   );

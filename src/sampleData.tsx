@@ -52,7 +52,7 @@ export const metricData: MetricData = [
     metric: "Likes",
     icon: facebookIcon,
     value: 52,
-    change: 2,
+    change: -2,
   },
   {
     platform: "instagram",
@@ -87,13 +87,13 @@ export const metricData: MetricData = [
     metric: "Total Views",
     icon: youtubeIcon,
     value: 1407,
-    change: 12,
+    change: -12,
   },
   {
     platform: "youtube",
     metric: "Likes",
     icon: youtubeIcon,
     value: 107,
-    change: 19,
+    change: -19,
   },
 ];

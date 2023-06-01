@@ -21,6 +21,12 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
 }) => {
   // If Number is great than 10,000, convert to string with k (10,000 = 10k)
 
+  const changeColor = change > 0 ? "text-green-500" : "text-red-500";
+  const arrow = change > 0 ? arrowUp : arrowDown;
+
+  // remove negative sign
+  const changeAbsolute = Math.abs(change);
+
   return (
     <div className="bg-[#252b42] rounded p-4 border-t-4 border-red-500 w-64 h-64 flex flex-col justify-center items-center gap-4">
       {/* Tag and platform */}
@@ -37,26 +43,15 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
         <div className="text-white">{metric.toUpperCase()}</div>
       </div>
 
-      {/* Increase/decrease */}
-      {change > 0 ? (
-        <div className="flex flex-row text-[#1eb589]">
-          <img
-            src={arrowUp}
-            className="h-auto w-auto object-contain mr-1"
-            alt="arrow up"
-          ></img>
-          <div className="">{change} Today</div>
-        </div>
-      ) : (
-        <div className="flex flex-row text-[#dc414c] text-log">
-          <img
-            src={arrowDown}
-            className="h-auto w-auto object-contain mr-1"
-            alt="arrow down"
-          ></img>
-          <div className="">{change} Today</div>
-        </div>
-      )}
+      {/* Change */}
+      <div className={`flex flex-row ${changeColor}`}>
+        <img
+          src={arrow}
+          className="h-auto w-auto object-contain mr-1"
+          alt="arrow up"
+        ></img>
+        <div className="font-bold">{changeAbsolute} Today</div>
+      </div>
     </div>
   );
 };
