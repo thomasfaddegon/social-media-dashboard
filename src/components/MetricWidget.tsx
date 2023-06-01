@@ -17,6 +17,9 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({
   metric,
   change,
 }) => {
+  // If Number is great than 10,000, convert to string with k (10,000 = 10k)
+  const valueString = value > 10000 ? `${value / 1000}k` : value;
+
   const changeColor = change > 0 ? "text-green-500" : "text-red-500";
   const arrow = change > 0 ? arrowUp : arrowDown;
 
@@ -33,7 +36,7 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({
       </div>
 
       <div className="flex w-full justify-between items-center">
-        <div className="text-3xl text-white">{value}</div>
+        <div className="text-3xl text-white">{valueString}</div>
         <div className="flex flex-row ">
           <div className=" flex items-center">
             <img

@@ -20,6 +20,7 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
   change,
 }) => {
   // If Number is great than 10,000, convert to string with k (10,000 = 10k)
+  const valueString = value > 10000 ? `${value / 1000}k` : value;
 
   const changeColor = change > 0 ? "text-green-500" : "text-red-500";
   const arrow = change > 0 ? arrowUp : arrowDown;
@@ -39,7 +40,7 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
 
       {/* Number and metric */}
       <div className="flex flex-col items-center mb-4">
-        <div className="text-white text-[56px] font-bold">{value}</div>
+        <div className="text-white text-[56px] font-bold">{valueString}</div>
         <div className="text-white">{metric.toUpperCase()}</div>
       </div>
 
