@@ -19,17 +19,45 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
   metric,
   change,
 }) => {
-  // If Number is great than 10,000, convert to string with k (10,000 = 10k)
+  // if Number is great than 10,000, convert to string with k (10,000 = 10k)
   const valueString = value > 10000 ? `${value / 1000}k` : value;
 
+  // change color and arrow based on positive or negative change
   const changeColor = change > 0 ? "text-green-500" : "text-red-500";
   const arrow = change > 0 ? arrowUp : arrowDown;
 
   // remove negative sign
   const changeAbsolute = Math.abs(change);
 
+  // border colors
+  let borderColor;
+
+  switch (platform) {
+    case "facebook":
+      borderColor = "#178FF5";
+      break;
+    case "twitter":
+      borderColor = "#1DA1F2";
+      break;
+    case "instagram":
+      borderColor = "#EE877E";
+      break;
+    case "youtube":
+      borderColor = "#C4032B";
+      break;
+    default:
+      borderColor = "black";
+      break;
+  }
+
   return (
-    <div className="bg-[#252b42] rounded p-4 border-t-4 border-red-500 w-64 h-64 flex flex-col justify-center items-center gap-4">
+    <div
+      className={`bg-[#252b42] rounded p-4 border-t-4 border-${borderColor} w-64 h-64 flex flex-col justify-center items-center gap-4`}
+      style={{
+        borderTopWidth: "0.25rem",
+        borderTopColor: borderColor,
+      }}
+    >
       {/* Tag and platform */}
       <div className="flex items-center">
         <div className="mr-2">
