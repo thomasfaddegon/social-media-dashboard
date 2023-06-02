@@ -27,9 +27,9 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({
   const changeAbsolute = Math.abs(change);
 
   return (
-    <div className="bg-[#252b42] rounded p-8 w-64 h-40 flex flex-col justify-center items-center gap-10 font-bold">
+    <div className="bg-[#252b42] rounded p-8 w-64 h-36 flex flex-col justify-center items-center gap-8 font-bold">
       <div className="flex w-full justify-between">
-        <h3>{metric}</h3>
+        <h4 className="flex items-center">{metric}</h4>
         <div>
           <img src={icon} alt="Icon" className="w-6 h-6" />
         </div>
@@ -37,8 +37,8 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({
 
       <div className="flex w-full justify-between items-center">
         <div className="text-3xl text-white">{valueString}</div>
-        <div className="flex flex-row ">
-          <div className=" flex items-center">
+        <div className="flex flex-row self-end">
+          <div className="flex items-center">
             <img
               src={arrow}
               className="h-1 w-auto object-contain mr-1"
@@ -46,9 +46,7 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({
             />
           </div>
 
-          <div className={`align-middle ${changeColor}`}>
-            {changeAbsolute} %
-          </div>
+          <div className={`${changeColor} text-sm`}>{changeAbsolute} %</div>
         </div>
       </div>
     </div>
