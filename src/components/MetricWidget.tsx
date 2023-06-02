@@ -20,14 +20,14 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({
   // If Number is great than 10,000, convert to string with k (10,000 = 10k)
   const valueString = value > 10000 ? `${value / 1000}k` : value;
 
-  const changeColor = change > 0 ? "text-green-500" : "text-red-500";
+  const changeColor = change > 0 ? "green" : "red";
   const arrow = change > 0 ? arrowUp : arrowDown;
 
   // remove negative sign
   const changeAbsolute = Math.abs(change);
 
   return (
-    <div className="bg-[#252b42] rounded p-8 w-64 h-36 flex flex-col justify-center items-center gap-8 font-bold">
+    <div className="bg-widgetBackground-dark rounded p-8 w-64 h-36 flex flex-col justify-center items-center gap-8 font-bold">
       <div className="flex w-full justify-between">
         <h4 className="flex items-center">{metric}</h4>
         <div>
@@ -46,7 +46,9 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({
             />
           </div>
 
-          <div className={`${changeColor} text-sm`}>{changeAbsolute} %</div>
+          <div className={`text-${changeColor} text-sm`}>
+            {changeAbsolute} %
+          </div>
         </div>
       </div>
     </div>

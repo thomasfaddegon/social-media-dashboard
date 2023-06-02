@@ -23,7 +23,7 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
   const valueString = value > 10000 ? `${value / 1000}k` : value;
 
   // change color and arrow based on positive or negative change
-  const changeColor = change > 0 ? "text-green-500" : "text-red-500";
+  const changeColor = change > 0 ? "green" : "red";
   const arrow = change > 0 ? arrowUp : arrowDown;
 
   // remove negative sign
@@ -57,7 +57,7 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
 
   return (
     <div
-      className={`bg-[#252b42] rounded p-4 border-t-4 border-${borderColor} w-[16rem] h-[14rem] flex flex-col justify-center items-center gap-2`}
+      className={`bg-widgetBackground-dark rounded p-4 border-t-4 border-${borderColor} w-[16rem] h-[14rem] flex flex-col justify-center items-center gap-2`}
       style={{
         borderTopWidth: "0.25rem",
         borderTopColor: borderColor,
@@ -73,8 +73,8 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
 
       {/* Number and metric */}
       <div className="flex flex-col items-center mb-4">
-        <div className="text-white text-[56px] font-bold">{valueString}</div>
-        <div className="text-[#8c98c6] text-xs mt-[-10px]" style={customStyles}>
+        <div className="text-mainText text-[56px] font-bold">{valueString}</div>
+        <div className="text-grey text-xs mt-[-10px]" style={customStyles}>
           {metric.toUpperCase()}
         </div>
       </div>
@@ -86,7 +86,9 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
           className="h-auto w-auto object-contain mr-1"
           alt="arrow up"
         ></img>
-        <div className="font-bold text-sm">{changeAbsolute} Today</div>
+        <div className={`text-${changeColor} font-bold text-sm`}>
+          {changeAbsolute} Today
+        </div>
       </div>
     </div>
   );
