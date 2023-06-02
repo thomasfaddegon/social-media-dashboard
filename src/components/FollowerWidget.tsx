@@ -32,6 +32,11 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
   // border colors
   let borderColor;
 
+  // metric name spacing
+  const customStyles = {
+    letterSpacing: ".4em",
+  };
+
   switch (platform) {
     case "facebook":
       borderColor = "#178FF5";
@@ -52,7 +57,7 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
 
   return (
     <div
-      className={`bg-[#252b42] rounded p-4 border-t-4 border-${borderColor} w-64 h-64 flex flex-col justify-center items-center gap-4`}
+      className={`bg-[#252b42] rounded p-4 border-t-4 border-${borderColor} w-[16rem] h-[14rem] flex flex-col justify-center items-center gap-2`}
       style={{
         borderTopWidth: "0.25rem",
         borderTopColor: borderColor,
@@ -63,13 +68,15 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
         <div className="mr-2">
           <img src={icon} alt="Icon" className="w-6 h-6" />
         </div>
-        <div className="text-white text-lg">{handle}</div>
+        <h4 className="">{handle}</h4>
       </div>
 
       {/* Number and metric */}
       <div className="flex flex-col items-center mb-4">
         <div className="text-white text-[56px] font-bold">{valueString}</div>
-        <div className="text-white">{metric.toUpperCase()}</div>
+        <div className="text-[#8c98c6] text-xs mt-[-10px]" style={customStyles}>
+          {metric.toUpperCase()}
+        </div>
       </div>
 
       {/* Change */}
@@ -79,7 +86,7 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
           className="h-auto w-auto object-contain mr-1"
           alt="arrow up"
         ></img>
-        <div className="font-bold">{changeAbsolute} Today</div>
+        <div className="font-bold text-sm">{changeAbsolute} Today</div>
       </div>
     </div>
   );
