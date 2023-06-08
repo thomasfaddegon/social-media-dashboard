@@ -9,6 +9,7 @@ interface FollowerWidgetProps {
   value: number;
   metric: string;
   change: number;
+  darkMode: boolean;
 }
 
 const FollowerWidget: React.FC<FollowerWidgetProps> = ({
@@ -18,6 +19,7 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
   value,
   metric,
   change,
+  darkMode,
 }) => {
   // if Number is great than 10,000, convert to string with k (10,000 = 10k)
   const valueString = value > 10000 ? `${value / 1000}k` : value;
@@ -73,7 +75,13 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
 
       {/* Number and metric */}
       <div className="flex flex-col items-center mb-4">
-        <div className="text-mainText text-[56px] font-bold">{valueString}</div>
+        <div
+          className={`${
+            darkMode ? "text-mainText-dark" : "text-mainText-light"
+          } text-[56px] font-bold`}
+        >
+          {valueString}
+        </div>
         <div className="text-grey-dark text-xs mt-[-10px]" style={customStyles}>
           {metric.toUpperCase()}
         </div>
