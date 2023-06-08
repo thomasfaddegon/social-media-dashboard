@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Switch } from "@headlessui/react";
 
 const App: React.FC = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -29,15 +29,19 @@ const App: React.FC = () => {
             <Switch
               checked={darkMode}
               onChange={setDarkMode}
-              className={`${darkMode ? "bg-red" : "bg-grey-dark"}
-          relative inline-flex h-[38px] w-[74px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+              className={`${darkMode ? "bg-green" : "bg-[#AEB3CB]"}
+  relative inline-flex h-[38px] w-[75px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
               <span className="sr-only">Use setting</span>
-              {/* This is the round toggle */}
+              {/* This is the circle */}
               <span
                 aria-hidden="true"
-                className={`${darkMode ? "translate-x-9" : "translate-x-0"}
-            pointer-events-none inline-block h-[34px] w-[34px] transform rounded-full bg-red shadow-lg ring-0 transition duration-200 ease-in-out`}
+                className={`${
+                  darkMode
+                    ? "translate-x-0 bg-[#333A55] "
+                    : "translate-x-8 bg-[#F1F3FA]"
+                }
+    pointer-events-none inline-block h-[28px] w-[28px] transform rounded-full shadow-lg ring-0 transition duration-200 ease-in-out mt-[3px] ml-[5px]`}
               />
             </Switch>
           </div>
