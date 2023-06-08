@@ -88,13 +88,17 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
       </div>
 
       {/* Change */}
-      <div className={`flex flex-row ${changeColor}`}>
+      <div className={`flex flex-row`}>
         <img
           src={arrow}
           className="h-auto w-auto object-contain mr-1"
           alt="arrow up"
         ></img>
-        <div className={`text-${changeColor} font-bold text-sm`}>
+        <div
+          className={`${
+            change > 0 ? "text-green" : "text-red"
+          } font-bold text-sm`}
+        >
           {changeAbsolute} Today
         </div>
       </div>
