@@ -29,9 +29,19 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({
   const changeAbsolute = Math.abs(change);
 
   return (
-    <div className="bg-widgetBackground-dark rounded p-8 w-64 h-36 flex flex-col justify-center items-center gap-8 font-bold">
+    <div
+      className={`${
+        darkMode ? "bg-widgetBackground-dark" : "bg-widgetBackground-light"
+      } rounded p-8 w-64 h-36 flex flex-col justify-center items-center gap-8 font-bold`}
+    >
       <div className="flex w-full justify-between">
-        <h4 className="flex items-center">{metric}</h4>
+        <h4
+          className={`${
+            darkMode ? "text-grey-dark" : "text-grey-light"
+          } flex items-center`}
+        >
+          {metric}
+        </h4>
         <div>
           <img src={icon} alt={`${platform} icon`} className="w-6 h-6" />
         </div>

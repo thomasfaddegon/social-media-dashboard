@@ -24,8 +24,6 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
   // if Number is great than 10,000, convert to string with k (10,000 = 10k)
   const valueString = value > 10000 ? `${value / 1000}k` : value;
 
-  // change color and arrow based on positive or negative change
-  const changeColor = change > 0 ? "green" : "red";
   const arrow = change > 0 ? arrowUp : arrowDown;
 
   // remove negative sign
@@ -33,12 +31,6 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
 
   // border colors
   let borderColor;
-
-  // metric name spacing
-  const customStyles = {
-    letterSpacing: ".4em",
-  };
-
   switch (platform) {
     case "facebook":
       borderColor = "#178FF5";
@@ -57,9 +49,16 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
       break;
   }
 
+  // metric name spacing
+  const customStyles = {
+    letterSpacing: ".4em",
+  };
+
   return (
     <div
-      className={`bg-widgetBackground-dark rounded p-4 border-t-4 border-${borderColor} w-[16rem] h-[14rem] flex flex-col justify-center items-center gap-2`}
+      className={`${
+        darkMode ? "bg-widgetBackground-dark" : "bg-widgetBackground-light"
+      } rounded p-4 border-t-4 border-${borderColor} w-[16rem] h-[14rem] flex flex-col justify-center items-center gap-2`}
       style={{
         borderTopWidth: "0.25rem",
         borderTopColor: borderColor,
@@ -70,7 +69,9 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
         <div className="mr-2">
           <img src={icon} alt="Icon" className="w-6 h-6" />
         </div>
-        <h4 className="">{handle}</h4>
+        <h4 className={`${darkMode ? "text-grey-dark" : "text-grey-light"}`}>
+          {handle}
+        </h4>
       </div>
 
       {/* Number and metric */}
@@ -82,7 +83,12 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
         >
           {valueString}
         </div>
-        <div className="text-grey-dark text-xs mt-[-10px]" style={customStyles}>
+        <div
+          className={`${
+            darkMode ? "text-grey-dark" : "text-grey-light"
+          } text-xs mt-[-10px]`}
+          style={customStyles}
+        >
           {metric.toUpperCase()}
         </div>
       </div>
