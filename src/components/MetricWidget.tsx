@@ -31,7 +31,7 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({
       <div className="flex w-full justify-between">
         <h4 className="flex items-center">{metric}</h4>
         <div>
-          <img src={icon} alt="Icon" className="w-6 h-6" />
+          <img src={icon} alt={`${platform} icon`} className="w-6 h-6" />
         </div>
       </div>
 

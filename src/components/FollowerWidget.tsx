@@ -74,7 +74,7 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
       {/* Number and metric */}
       <div className="flex flex-col items-center mb-4">
         <div className="text-mainText text-[56px] font-bold">{valueString}</div>
-        <div className="text-grey text-xs mt-[-10px]" style={customStyles}>
+        <div className="text-grey-dark text-xs mt-[-10px]" style={customStyles}>
           {metric.toUpperCase()}
         </div>
       </div>
