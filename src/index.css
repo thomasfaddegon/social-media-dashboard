@@ -28,7 +28,8 @@ body {
 .column {
   display: flex;
   flex-direction: column;
-  max-width: 1200px;
+  padding: 20px;
+  max-width: 1140px;
 }
 
 .main {
