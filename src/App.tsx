@@ -22,7 +22,7 @@ const App: React.FC = () => {
         <div className="flex w-full justify-between mb-12">
           <div>
             <h1
-              className={`text-start ${
+              className={`text-start mb-1 ${
                 darkMode ? "text-mainText-dark" : "text-mainText-light"
               }`}
             >
@@ -48,7 +48,7 @@ const App: React.FC = () => {
               checked={darkMode}
               onChange={toggleDarkMode}
               className={`${darkMode ? "bg-green" : "bg-[#AEB3CB]"}
-relative inline-flex h-[38px] w-[75px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
+relative inline-flex h-[34px] w-[70px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
               <span className="sr-only">Use setting</span>
               {/* This is the circle */}
@@ -59,7 +59,7 @@ relative inline-flex h-[38px] w-[75px] shrink-0 cursor-pointer rounded-full bord
                     ? "translate-x-0 bg-[#333A55] "
                     : "translate-x-8 bg-[#F1F3FA]"
                 }
-pointer-events-none inline-block h-[28px] w-[28px] transform rounded-full shadow-lg ring-0 transition duration-200 ease-in-out mt-[3px] ml-[5px]`}
+pointer-events-none inline-block h-[24px] w-[24px] transform rounded-full shadow-lg ring-0 transition duration-200 ease-in-out mt-[3px] ml-[5px]`}
               />
             </Switch>
           </div>
@@ -80,6 +80,9 @@ pointer-events-none inline-block h-[28px] w-[28px] transform rounded-full shadow
                 />
               );
             })}
+        </div>
+        <div>
+          <h2 className="text-left mb-8">Overview - Today</h2>
         </div>
         <div className="flex flex-wrap flex-row gap-6">
           {metricData &&
