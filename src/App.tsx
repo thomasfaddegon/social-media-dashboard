@@ -19,8 +19,8 @@ const App: React.FC = () => {
       }`}
     >
       <div className="column">
-        <div className="flex w-full justify-between items-center">
-          <div className="mb-12">
+        <div className="flex w-full justify-between mb-12">
+          <div>
             <h1
               className={`text-start ${
                 darkMode ? "text-mainText-dark" : "text-mainText-light"
@@ -28,9 +28,22 @@ const App: React.FC = () => {
             >
               Social Media Dashboard
             </h1>
-            <h3 className="text-start">Total Followers: 23,004</h3>
+            <h3
+              className={`${
+                darkMode ? "text-grey-dark" : "text-grey-light"
+              } text-start`}
+            >
+              Total Followers: 23,004
+            </h3>
           </div>
-          <div>
+          <div className="flex flex-row items-center">
+            <h3
+              className={`${
+                darkMode ? "text-grey-dark" : "text-grey-light"
+              } text-center justify-center mr-4`}
+            >
+              Dark Mode
+            </h3>
             <Switch
               checked={darkMode}
               onChange={toggleDarkMode}

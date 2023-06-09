@@ -57,22 +57,21 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2.5em;
   line-height: 1.1;
   color: white;
+  font-weight: 700;
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.1;
-  color: #8c98c6;
   font-weight: bold;
 }
 
 h4 {
   font-size: 0.9em;
   line-height: 1.1;
-  color: #8c98c6;
   font-weight: 700;
 }
 
