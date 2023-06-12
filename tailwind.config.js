@@ -25,6 +25,14 @@ export default {
         dark: "#FFFFFF",
       },
     },
+    screens: {
+      xs: "575px",
+      sm: "640px",
+      md: "768px",
+      lg: "1150px", // custom break here
+      xl: "1280px",
+      "2xl": "1536px",
+    },
     extend: {},
   },
   plugins: [],

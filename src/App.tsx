@@ -18,11 +18,12 @@ const App: React.FC = () => {
         darkMode ? "bg-background-dark" : "bg-background"
       }`}
     >
-      <div className="column">
-        <div className="flex w-full justify-between mb-12 flex-col md:flex-row ">
-          <div className="mb-4 md:mb-0">
+      {/* responsive page stylings are here */}
+      <div className="column flex flex-col p-5 max-w-xs sm:max-w-xl  lg:max-w-6xl mx-auto pb-20">
+        <div className="flex w-full lg:justify-between mb-12 flex-col lg:flex-row px-3 sm:px-0">
+          <div className="mb-4 lg:mb-0 text-start">
             <h1
-              className={`text-start mb-1 ${
+              className={` mb-1 ${
                 darkMode ? "text-mainText-dark" : "text-mainText-light"
               }`}
             >
@@ -36,7 +37,7 @@ const App: React.FC = () => {
               Total Followers: 23,004
             </h3>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center lg:mr-4">
             <h3
               className={`${
                 darkMode ? "text-grey-dark" : "text-grey-light"
@@ -64,7 +65,9 @@ pointer-events-none inline-block h-[20px] w-[20px] transform rounded-full shadow
             </Switch>
           </div>
         </div>
-        <div className="flex flex-wrap flex-row gap-6 mb-12">
+
+        {/* follower widgets */}
+        <div className="flex flex-wrap flex-row gap-6 mb-12 justify-center lg:justify-start">
           {followerData &&
             followerData.map((metric) => {
               return (
@@ -83,14 +86,14 @@ pointer-events-none inline-block h-[20px] w-[20px] transform rounded-full shadow
         </div>
         <div>
           <h2
-            className={` ${
+            className={`px-3 sm:px-0 ${
               darkMode ? "text-mainText-dark" : "text-mainText-light"
             } text-left mb-8`}
           >
             Overview - Today
           </h2>
         </div>
-        <div className="flex flex-wrap flex-row gap-6">
+        <div className="flex flex-wrap flex-row gap-6 justify-center">
           {metricData &&
             metricData.map((item) => {
               return (

@@ -25,12 +25,12 @@ body {
   min-height: 100vh;
 }
 
-.column {
+/* .column {
   display: flex;
   flex-direction: column;
   padding: 20px;
   max-width: 1140px;
-}
+} */
 
 .main {
   min-width: 100vw;
