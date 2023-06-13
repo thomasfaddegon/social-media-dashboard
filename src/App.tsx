@@ -21,7 +21,7 @@ const App: React.FC = () => {
       {/* responsive page stylings are here */}
       <div className="column flex flex-col p-5 max-w-xs sm:max-w-xl  lg:max-w-6xl mx-auto pb-20">
         <div className="flex w-full lg:justify-between mb-12 flex-col lg:flex-row px-3 sm:px-0">
-          <div className="mb-4 lg:mb-0 text-start">
+          <div className="mb-6 lg:mb-0 text-start">
             <h1
               className={` mb-1 ${
                 darkMode ? "text-mainText-dark" : "text-mainText-light"
@@ -37,6 +37,11 @@ const App: React.FC = () => {
               Total Followers: 23,004
             </h3>
           </div>
+          <div
+            className={`mb-6 border-t-2 ${
+              darkMode ? "border-[#333A55]" : "border-[#848BAB]"
+            }`}
+          ></div>
           <div className="flex items-center lg:mr-4">
             <h3
               className={`${
