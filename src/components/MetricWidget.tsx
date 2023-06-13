@@ -31,8 +31,11 @@ const MetricWidget: React.FC<MetricWidgetProps> = ({
   return (
     <div
       className={`${
-        darkMode ? "bg-widgetBackground-dark" : "bg-widgetBackground-light"
-      } rounded p-8 w-64 h-36 flex flex-col justify-center items-center gap-8 font-bold`}
+        darkMode
+          ? "bg-widgetBackground-dark hover:bg-widgetBackground-darkHover"
+          : "bg-widgetBackground-light hover:bg-widgetBackground-lightHover"
+      }
+      hover:cursor-pointer rounded p-8 w-[100%] sm:w-[16rem] h-36 flex flex-col justify-center items-center gap-8 font-bold`}
     >
       <div className="flex w-full justify-between">
         <h4

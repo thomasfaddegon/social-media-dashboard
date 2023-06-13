@@ -17,7 +17,7 @@ export default {
       widgetBackground: {
         light: "#F1F3FA",
         dark: "#252B42",
-        lightHover: "#979797",
+        lightHover: "#E1E4EF",
         darkHover: "#333A55",
       },
       mainText: {

@@ -98,7 +98,7 @@ pointer-events-none inline-block h-[20px] w-[20px] transform rounded-full shadow
             Overview - Today
           </h2>
         </div>
-        <div className="flex flex-wrap flex-row gap-6 justify-center">
+        <div className="flex flex-wrap flex-row gap-6 ">
           {metricData &&
             metricData.map((item) => {
               return (

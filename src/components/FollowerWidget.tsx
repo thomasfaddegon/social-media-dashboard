@@ -59,9 +59,11 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
   return (
     <div
       className={`${
-        darkMode ? "bg-widgetBackground-dark" : "bg-widgetBackground-light"
+        darkMode
+          ? "bg-widgetBackground-dark hover:bg-widgetBackground-darkHover"
+          : "bg-widgetBackground-light hover:bg-widgetBackground-lightHover"
       }
-     w-[100%] sm:w-[16rem] h-[14rem] rounded p-4 border-t-4 border-${borderColor} flex flex-col justify-center items-center gap-2`}
+      hover:cursor-pointer w-[100%] sm:w-[16rem] h-[14rem] rounded p-4 border-t-4 border-${borderColor} flex flex-col justify-center items-center gap-2`}
       style={{
         borderTopWidth: "0.25rem",
         borderTopColor: borderColor,
