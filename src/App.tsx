@@ -19,7 +19,7 @@ const App: React.FC = () => {
       }`}
     >
       {/* responsive page stylings are here */}
-      <div className="column flex flex-col p-5 max-w-xs sm:max-w-xl  lg:max-w-6xl mx-auto pb-20">
+      <div className="column flex flex-col p-5 max-w-sm sm:max-w-xl  lg:max-w-6xl mx-auto pb-20">
         <div className="flex w-full lg:justify-between mb-12 flex-col lg:flex-row px-3 sm:px-0">
           <div className="mb-6 lg:mb-0 text-start">
             <h1

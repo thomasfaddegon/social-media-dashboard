@@ -10,6 +10,7 @@ interface FollowerWidgetProps {
   metric: string;
   change: number;
   darkMode: boolean;
+  mobile?: boolean;
 }
 
 const FollowerWidget: React.FC<FollowerWidgetProps> = ({
@@ -20,6 +21,7 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
   metric,
   change,
   darkMode,
+  mobile,
 }) => {
   // if Number is great than 10,000, convert to string with k (10,000 = 10k)
   const valueString = value > 10000 ? `${value / 1000}k` : value;
@@ -58,7 +60,8 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
     <div
       className={`${
         darkMode ? "bg-widgetBackground-dark" : "bg-widgetBackground-light"
-      } rounded p-4 border-t-4 border-${borderColor} w-[16rem] h-[14rem] flex flex-col justify-center items-center gap-2`}
+      }
+     w-[100%] sm:w-[16rem] h-[14rem] rounded p-4 border-t-4 border-${borderColor} flex flex-col justify-center items-center gap-2`}
       style={{
         borderTopWidth: "0.25rem",
         borderTopColor: borderColor,
