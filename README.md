@@ -9,8 +9,8 @@ This is a solution to the [Social media dashboard with theme switcher challenge 
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
-  - [How I built it](#how-i-built-it)
   - [Built with](#built-with)
+  - [How I built it](#how-i-built-it)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
 
@@ -30,9 +30,17 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: (https://app.netlify.com/sites/rococo-tanuki-76abba/overview)
+- Live Site URL: (https://rococo-tanuki-76abba.netlify.app/)
 
 ## My process
+
+### Built with
+
+- Vite
+- Typescript
+- React
+- Tailwind
+- Headless UI
 
 ### How I built it
 
@@ -43,14 +51,6 @@ A lot of elements are dynamic on the widget as well: the text will automatically
 The dark theme was a bit tricky, but I was able to incorporate it by storing the selected mode in state and updating it whenver the toggle was switched. Finding a toggle that worked took some work. I originally used one from DaisyUI but ran into too many bugs styling it, so I switched to HeadlessUI. I hadn't even heard of HeadlessUI before, but it worked perfectly and not only is a lot more customizable than Daisy, it offers excellent accessibility right out of the box.
 
 As for responsive design, I'm pretty proud of how I was able to make it look polished on all screen sizes. I didn't like the way it looked using flex-wrap since you had a row of 3 and then 1, so I refactored to use grid in order to make sure you only had rows of 4 or 2 (or 1 on mobile). I also adjusted the size of the widgets on mobile to make sure it was utilizing the full width of the device.
-
-### Built with
-
-- Vite
-- Typescript
-- React
-- Tailwind
-- Headless UI
 
 ### What I learned
 
