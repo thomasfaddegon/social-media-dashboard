@@ -23,7 +23,7 @@ const App: React.FC = () => {
         <div className="flex w-full lg:justify-between mb-12 flex-col lg:flex-row px-3 sm:px-0">
           <div className="mb-6 lg:mb-0 text-start">
             <h1
-              className={` mb-1 ${
+              className={` mb-1 text-2xl sm:text-4xl ${
                 darkMode ? "text-mainText-dark" : "text-mainText-light"
               }`}
             >
@@ -91,7 +91,7 @@ pointer-events-none inline-block h-[20px] w-[20px] transform rounded-full shadow
         </div>
         <div>
           <h2
-            className={`px-3 sm:px-0 ${
+            className={`px-3 sm:px-0 text-xl sm:text-3xl ${
               darkMode ? "text-mainText-dark" : "text-mainText-light"
             } text-left mb-8`}
           >
