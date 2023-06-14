@@ -21,7 +21,6 @@ const FollowerWidget: React.FC<FollowerWidgetProps> = ({
   metric,
   change,
   darkMode,
-  mobile,
 }) => {
   // if Number is great than 10,000, convert to string with k (10,000 = 10k)
   const valueString = value > 10000 ? `${value / 1000}k` : value;
