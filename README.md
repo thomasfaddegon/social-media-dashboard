@@ -44,7 +44,7 @@ Users should be able to:
 
 ### How I built it
 
-Even though this is a front-end only project, I wanted to approach the project as if the dashboard was drawing numbers from a database rather than hardcoding the stats. I added all of the data to a sampleData.tsx, and then imported them into App.tsx. I used React components for each type of widget, and passed in all of the stats and variables as props.
+Even though this is a front-end only project, I wanted to approach it as if the dashboard was drawing numbers from a database. I added all of the data to a sampleData.tsx, and then imported them into App.tsx. I used React components for each type of widget, and passed in all of the stats and variables as props.
 
 A lot of elements are dynamic on the widget as well: the text will automatically change from green to red if the numbers are negative, and it will remove the negative sign as well. The arrow will change from a green up arrow to a downwards red arrow using the same logic. Also if the number is above 10,000, it will automaticaly change it from 11,000 to 11k.
 
