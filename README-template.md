@@ -1,6 +1,6 @@
 # Frontend Mentor - Social media dashboard with theme switcher solution
 
-This is a solution to the [Social media dashboard with theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Social media dashboard with theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H).
 
 ## Table of contents
 
@@ -9,14 +9,10 @@ This is a solution to the [Social media dashboard with theme switcher challenge 
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
+  - [How I built it](#how-i-built-it)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -30,83 +26,42 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
 
+### How I built it
+
+Even though this is a front-end only project, I wanted to approach the project as if the dashboard was drawing numbers from a database rather than hardcoding the stats. I added all of the data to a sampleData.tsx, and then imported them into App.tsx. I used React components for each type of widget, and passed in all of the stats and variables as props.
+
+A lot of elements are dynamic on the widget as well: the text will automatically change from green to red if the numbers are negative, and it will remove the negative sign as well. The arrow will change from a green up arrow to a downwards red arrow using hte same logic. Also if the numberis above 10,000, it will automaticaly change it from 11,000 to 11k.
+
+The dark theme was a bit tricky, but I was able to incorporate it by storing the selected mode in state and updating it whenver the toggle was switched. Finding a toggle that worked took some work. I originally used one from DaisyUI but ran into too many bugs styling it, so I switched to HeadlessUI. I hadn't even heard of HeadlessUI before, but it worked perfectly and not only is a lot more customizable than Daisy, it offers excellent accessibility right out of the box.
+
+As for responsive design, I'm pretty proud of how I was able to make it look polished on all screen sizes. I didn't like the way it looked using flex-wrap since you had a row of 3 and then 1, so I refactored to use grid in order to make sure you only had rows of 4 or 2 (or 1 on mobile). I also adjusted the size of the widgets on mobile to make sure it was utilizing the full width of the device.
+
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Vite
+- Typescript
+- React
+- Tailwind
+- Headless UI
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I think the biggest mistake I made early on with this project is creating two separate widgets for the followers and the metrics.
 
-To see how you can add code snippets, see below:
+What I should have done is create a single parent widget type that contained basic attributes like background, hover states, and responsive stylings, and then passed in a "type" prop where I defined the different layouts for each widget. I ended up duplicating a lot of code between the two widgets that I didn't have to.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+I should have also created a component for "widgetRow" that handled all the reponsive stylings instead of coding each section manually in App.tsx.
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Finally, with darkMode, I think I should have used Tailwind's method of implementing dark mode, which sets a class on the HTML document itself rather than storing it in the app as state. My solution ended up working fine, but it doesn't automatically detect the light/dark mode preference on the user's computer right out of the box.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+The one thing I was not able to figure out was how to do the gradients on the toggle switch or the Instagram follower widget border. Hopefully I can return and try to knock those out again because they look beautiful on the design.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
-
-### Useful resources
-
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
-
-## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I also did not incorporate the slightly different color bar on the top quarter of the page into my initial markup, and it will require some refactoring to add it in.
