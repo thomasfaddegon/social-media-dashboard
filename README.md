@@ -46,7 +46,7 @@ Users should be able to:
 
 Even though this is a front-end only project, I wanted to approach the project as if the dashboard was drawing numbers from a database rather than hardcoding the stats. I added all of the data to a sampleData.tsx, and then imported them into App.tsx. I used React components for each type of widget, and passed in all of the stats and variables as props.
 
-A lot of elements are dynamic on the widget as well: the text will automatically change from green to red if the numbers are negative, and it will remove the negative sign as well. The arrow will change from a green up arrow to a downwards red arrow using hte same logic. Also if the numberis above 10,000, it will automaticaly change it from 11,000 to 11k.
+A lot of elements are dynamic on the widget as well: the text will automatically change from green to red if the numbers are negative, and it will remove the negative sign as well. The arrow will change from a green up arrow to a downwards red arrow using the same logic. Also if the number is above 10,000, it will automaticaly change it from 11,000 to 11k.
 
 The dark theme was a bit tricky, but I was able to incorporate it by storing the selected mode in state and updating it whenver the toggle was switched. Finding a toggle that worked took some work. I originally used one from DaisyUI but ran into too many bugs styling it, so I switched to HeadlessUI. I hadn't even heard of HeadlessUI before, but it worked perfectly and not only is a lot more customizable than Daisy, it offers excellent accessibility right out of the box.
 
